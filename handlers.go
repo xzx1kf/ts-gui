@@ -26,7 +26,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 	json.Unmarshal([]byte(body), &b)
 
-	t, err := template.ParseFiles("index.html")
+	t, err := template.ParseFiles("tmpl/index.html")
 	if err != nil {
 		log.Print("template parsing errorL ", err)
 	}
