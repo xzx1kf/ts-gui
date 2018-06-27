@@ -7,12 +7,16 @@
 		<table>
 			<tr>
 				<th>Court</th>
-				<th>Link</th>
+				<th>Time</th>
+				<th>Book</th>
 			</tr>
+			{{ range . }}
 			<tr>
-				<td>{{.Court}}</td>
-				<td>{{.BookingLink}}</td>
+				<td>{{ .Court }}</td>
+				<td>{{ .Hour }}:{{ .Min }}</td>
+				<td><a href="{{ .BookingLink }}">Book</a></td>
 			</tr>
+			{{ end }}
 		</table>
 	</body>
 </html>

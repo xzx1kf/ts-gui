@@ -30,7 +30,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Print("template parsing errorL ", err)
 	}
-	err = t.Execute(w, b[0])
+	err = t.Execute(w, b)
 	if err != nil {
 		log.Print("template executing error: ", err)
 	}
