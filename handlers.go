@@ -34,5 +34,4 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Print("template executing error: ", err)
 	}
-	//fmt.Println(b[0].Court)
 }
