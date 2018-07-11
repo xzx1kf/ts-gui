@@ -6,7 +6,13 @@ import (
 	"log"
 	"net/http"
 	"html/template"
+	"fmt"
 )
+
+type Data struct {
+	bookings	Bookings
+	host		string
+}
 
 func Index(w http.ResponseWriter, r *http.Request) {
 	var b Bookings
@@ -26,11 +32,13 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 	json.Unmarshal([]byte(body), &b)
 
+	data := Data{bookings: b, host: "http://localhost:8082"}
+	fmt.Println(data)
 	t, err := template.ParseFiles("tmpl/index.html")
 	if err != nil {
 		log.Print("template parsing errorL ", err)
 	}
-	err = t.Execute(w, b)
+	err = t.Execute(w, data)
 	if err != nil {
 		log.Print("template executing error: ", err)
 	}
