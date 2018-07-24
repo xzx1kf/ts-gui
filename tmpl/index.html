@@ -14,7 +14,7 @@
 			<tr>
 				<td>{{ .Court }}</td>
 				<td>{{ .Hour }}:{{ .Min }}</td>
-				<td><a href="{{ .BookingLink }}">Book</a></td>
+				<td><a href="/bookings/new?court={{ .Court }}&days={{ .Days }}&hour={{ .Hour }}&min={{ .Min }}&timeSlot={{ .Timeslot }}">Book</a></td>
 			</tr>
 			{{ end }}
 		</table>

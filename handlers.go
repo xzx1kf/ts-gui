@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"html/template"
-	"fmt"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
